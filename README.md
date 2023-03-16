@@ -1,10 +1,10 @@
 ***Dynamic data:***
 
- 1: Data is not Dyanmic because we do not have idea which api is for whihc data but we have implemented the api and getting the response in console so you may check conseole.
+ 1: Data is not Dyanmic because we do not have idea which api is for Which data but we have implemented the api and getting the response in console so you may check conseole.
 
- 2:if we need Dyanmic data then you have to explain a bit about project.
+ 2:On Browser it is static data only you may check in console we are getting the data from api 
+ 3:If we need Dyanmic data then you have to explain a bit about project.
 
- 3:on Browser it is static data only you may check in console we are getting the data from api 
 
 ***Project Note:***
 1:Api url kepped into Enviorement .
