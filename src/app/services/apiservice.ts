@@ -9,16 +9,9 @@ export class ApiReferenceService {
     constructor(private _http: HttpClient) {
     }
 
-    public getMonthalyGoalApi(): Observable<any> {
-        return this._http.get<any>(`${this.apiUrl}retailer/getMonthlyGoal?retailerId=C2000669&quarter=1`);
+    getEOrderDetial(){
+        return this._http.get<any>(`${this.apiUrl}retailer/getEOrdering?retailerId=C2000669&quarter=1`)
     }
 
-    public getTasks(): Observable<any> {
-        return this._http.get<any>(`${this.apiUrl}retailer/getTasks?retailerId=C2000669&quarter=1`);
-    }
-
-    getTableView(){
-        return this._http.get<any>(`${this.apiUrl}retailer/getTableau?retailerId=C2000669&quarter=1`)
-    }
 
 }

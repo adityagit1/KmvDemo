@@ -18,173 +18,37 @@
     <div class="duration-content">
       <div class="container">
         <ul class="nav nav-pills mb-3 p-0" id="pills-tab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="march" data-bs-toggle="pill" data-bs-target="#march-pill" type="button" role="tab" aria-controls="march-pill" aria-selected="true">يناير</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="february" data-bs-toggle="pill" data-bs-target="#february-pill" type="button" role="tab" aria-controls="february-pill" aria-selected="false">فبراير</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="january" data-bs-toggle="pill" data-bs-target="#january-pill" type="button" role="tab" aria-controls="january-pill" aria-selected="false">مارس</button>
-          </li>
+          <li class="nav-item" role="presentation"  *ngFor="let item of getEderingDetial" >
+            <button class="nav-link" id="march" data-bs-toggle="pill" data-bs-target="#march-pill" type="button" role="tab" aria-controls="march-pill" aria-selected="true">{{selectMonth(item.month)}}</button>
         </ul>
-        <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade" id="march-pill" role="tabpanel" aria-labelledby="march">
-            <div class="row gx-5">
-              <div class="col-4">
-                <div class="row gy-2">
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
+        <div class="tab-content" id="pills-tabContent"  >
+          <div class="tab-pane fade show active" id="february-pill" role="tabpanel" aria-labelledby="february"  >
+            <div class="row gx-5" >
+              <div class="col-4" *ngFor="let outer of getEderingDetial" >
+                <div class="row gy-2"  >
+                  <div class="col-6" *ngFor="let item of outer.weeklyOrders" >
+                    <span class="badge" *ngIf="outer.month==1 || outer.month==4|| outer.month==10 || outer.month==7"><img src="../../assets/images/right.svg" alt="Right" *ngIf="item.ordered">
+                    <img src="../../assets/images/close.svg" alt="Right" *ngIf="!item.ordered">
+                    </span>
+                    <span class="badge" *ngIf="outer.month==2 || outer.month==5 || outer.month==8||outer.month==111"><img src="../../assets/images/right.svg" alt="Right" *ngIf="item.ordered">
+                      <img src="../../assets/images/close.svg" alt="Right" *ngIf="!item.ordered">
+                      </span>
+
+                      <span class="badge" *ngIf="outer.month==3 || outer.month==6||outer.month==9||outer.month==12"><img src="../../assets/images/right.svg" alt="Right" *ngIf="item.ordered">
+                        <img src="../../assets/images/close.svg" alt="Right" *ngIf="!item.ordered">
+                        </span>
                   </div>
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
+                 <!-- <div class="col-6" *ngIf="outer.month==2">
+                  <span class="badge"  align="center"><img src="../../assets/images/right.svg" alt="Right" *ngIf="item.ordered">
+                    <img src="../../assets/images/close.svg" alt="Right" *ngIf="!item.ordered">
+                    </span>
+                 </div> -->
                 </div>
               </div>
-              <div class="col-4">
-                <div class="row gy-2">
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/close.svg" alt="Close"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="row gy-2">
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                </div>
-              </div>
+             
             </div>
           </div>
-          <div class="tab-pane fade show active" id="february-pill" role="tabpanel" aria-labelledby="february">
-            <div class="row gx-5">
-              <div class="col-4">
-                <div class="row gy-2">
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="row gy-2">
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/close.svg" alt="Close"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="row gy-2">
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="january-pill" role="tabpanel" aria-labelledby="january">
-            <div class="row gx-5">
-              <div class="col-4">
-                <div class="row gy-2">
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="row gy-2">
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/right.svg" alt="Right"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"><img src="assets/images/close.svg" alt="Close"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="row gy-2">
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                  <div class="col-6">
-                    <span class="badge"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+         
         </div>
       </div>
     </div>
@@ -196,12 +60,12 @@
       <div class="container">
         <hr class="top-border-lg">
         <h2>ليكوموند لي درت فالشهر <br>  تطبيق <b> عبرشري وربح</b>
-          <br> <span> شهر فبراير</span></h2>
+          <br> <span> شهر فبراير  {{selectMonth(currenMonth)}}</span></h2>
         <ul class="nav p-0">
-          <li><a href="javascript:void(0);"><span class="badge"><img src="assets/images/right.svg" alt="Right"></span> <h3>الأسبوع 1</h3></a></li>
-          <li><a href="javascript:void(0);"><span class="badge"><img src="assets/images/close.svg" alt="Close"></span> <h3>الأسبوع 2</h3></a></li>
-          <li><a href="javascript:void(0);"><span class="badge"></span> <h3>الأسبوع 3</h3></a></li>
-          <li><a href="javascript:void(0);"><span class="badge"></span> <h3>الأسبوع 4</h3></a></li>
+          <li *ngFor="let item of currenMonthDetail?.weeklyOrders"><a href="javascript:void(0);"><span class="badge">
+            <img src="assets/images/right.svg" alt="Right" *ngIf="item.ordered">
+            <img src="assets/images/close.svg" alt="Close" *ngIf="!item.ordered">
+          </span> <h3>الأسبوع{{item.week}}</h3></a></li>
         </ul>
       </div>
     </div>
@@ -209,7 +73,7 @@
       <div class="container">
         <hr class="top-border-md">
         <h2>المبلغ لي دوزت <b>فشري وربح </b><br>هاد الشهر</h2>
-        <h3>20,300 درهم</h3>
+        <h3>{{currenMonthDetail?.turnover}} درهم</h3>
         <hr class="top-border-lg mb-0">
       </div>
     </div>
@@ -221,7 +85,7 @@
     <div class="profit">
       <div class="duration-header profit-header">
         <div class="container">
-          <a href="javascript:void(0);"><span class="d-flex flex-column"> <h3>100 درهم</h3> <span>20,300 درهم مشتريات</span></span></a>
+          <a href="javascript:void(0);"><span class="d-flex flex-column"> <h3>100 درهم</h3> <span>{{totalDirams}} درهم مشتريات</span></span></a>
         </div>
       </div>
       <div class="profit-content">
