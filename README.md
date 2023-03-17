@@ -1,27 +1,36 @@
-# Demo1
+***Dynamic data:***
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+ 1: Data is not Dyanmic because we do not have idea which api is for Which data but we have implemented the api and getting the response in console so you may check conseole.
 
-## Development server
+ 2: On Browser it is static data only you may check in console we are getting the data from api.
+ 
+ 3: If we need Dyanmic data then you have to explain a bit about project.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+***Project Note:***
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1: Api url kepped into Enviorement .
 
-## Build
+2: A common Interceptor is created .
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3: Implemented lazy Loading for the project.
 
-## Running unit tests
+4: For Demo Project we have not created the Constant Files .
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+5: For Api refrence We have Created the Common Services .
 
-## Running end-to-end tests
+6: No Response code was getting into api so not checked that conditions .
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+7: No Loader is implemented becuase of demo project .
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+***Project Run Steps:***
+
+1: First clone the repository.
+
+2: Run Command  npm install.
+
+3: Run Command ng serve .
+
+
